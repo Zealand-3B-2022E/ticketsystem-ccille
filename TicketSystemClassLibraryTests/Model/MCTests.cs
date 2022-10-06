@@ -20,20 +20,33 @@ namespace TicketSystemClassLibrary.Model.Tests
         }
 
         [TestMethod()]
-        public void MC_Price()
+        public void MC_Price_Without_Discont()
         {
             //Arrange
             double expected = 125;
 
             //Act
-            double actual = mc.Price();
+            double actual = mc.Price(false);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
-        public void MC_VehicleTest()
+        public void MC_Price_With_Brobiz_Discont()
+        {
+            //Arrange
+            double expected = 125 * 0.95;
+
+            //Act
+            double actual = mc.Price(true);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void MC_VehicleType_Success()
         {
             //Arrange
             string expected = "MC";
@@ -45,5 +58,21 @@ namespace TicketSystemClassLibrary.Model.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod()]
+        [DataRow("")]
+        [DataRow("1234")]
+        [DataRow("12345AD")]
+        public void Vehicle_MC_Licensplate_7_CharchtersLong(string plate)
+        {
+            //Arrange
+
+
+            //Act
+            mc.LicensPlate = plate;
+
+            //Assert
+            Assert.IsTrue(7 >= mc.LicensPlate.Length);
+
+        }
     }
 }

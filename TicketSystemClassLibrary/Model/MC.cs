@@ -8,25 +8,11 @@ namespace TicketSystemClassLibrary.Model
 {
     public class MC : Vehicles
     {
-        public string Licensplate { get; set; }
-
-        public DateTime Date { get; private set; }
-
-        /// <summary>
-        /// Constructor with parameters
-        /// </summary>
-        /// <param name="licensPlate">MC linsensplate</param>
-        /// <param name="date">Date</param>
-        public MC(string licensplate, DateTime date)
-        {
-            Licensplate = licensplate;
-            Date = date;
-        }
-
+       
         /// <summary>
         /// Default constructor
         /// </summary>
-        public MC()
+        public MC() :base()
         {
         }
 
@@ -34,8 +20,12 @@ namespace TicketSystemClassLibrary.Model
         /// Method for price - double inherit from vehicle
         /// </summary>
         /// <returns>the price for MC</returns>
-        public override double Price()
+        public override double Price(bool brobiz)
         {
+            if (brobiz == true)
+            {
+                return 125 * 0.95;
+            }
             return 125;
         }
 
@@ -47,5 +37,6 @@ namespace TicketSystemClassLibrary.Model
         {
             return "MC";
         }
+
     }
 }

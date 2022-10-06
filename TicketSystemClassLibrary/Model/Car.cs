@@ -2,35 +2,33 @@
 {
     public class Car :Vehicles
     {
-        public string LicensPlate { get; private set; }
 
-        public DateTime Date { get; private set; }
 
         /// <summary>
         /// Constructor with parameters
         /// </summary>
         /// <param name="licensPlate">car linsensplate</param>
         /// <param name="date">Date</param>
-        public Car(string licensPlate, DateTime date)
+        public Car(string licensplate, DateTime date) :base()
         {
-            LicensPlate = licensPlate;
-            Date = date;
+            
         }
 
-        /// <summary>
-        /// Default constructor
-        /// </summary>
-        public Car() 
+        public Car() : base()
         {
+
         }
-
-
+        
         /// <summary>
         /// Method for Price - double inherit from vehicle class
         /// </summary>
         /// <returns>Price 240</returns>
-        public override double Price()
+        public override double Price(bool brobiz)
         {
+            if (brobiz == true)
+            {
+                return 240 * 0.95;
+            }
             return 240;
         }
 
@@ -42,5 +40,6 @@
         {
             return "Car";
         }
+
     }
 }
