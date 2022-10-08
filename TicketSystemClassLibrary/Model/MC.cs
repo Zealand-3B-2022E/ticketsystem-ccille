@@ -17,7 +17,7 @@ namespace TicketSystemClassLibrary.Model
         }
 
         /// <summary>
-        /// Method for price - double inherit from vehicle
+        /// Method for price - double inherit from vehicle with bool for brobiz
         /// </summary>
         /// <returns>the price for MC</returns>
         public override double Price(bool brobiz)

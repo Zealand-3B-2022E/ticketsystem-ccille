@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketSystemClassLibrary", "TicketSystemClassLibrary\TicketSystemClassLibrary.csproj", "{183D69DE-5904-46BD-9168-828D1DDE550C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketSystemClassLibraryTests", "TicketSystemClassLibraryTests\TicketSystemClassLibraryTests.csproj", "{BB471A84-4360-4C7A-ABA5-8BCF88E939AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketSystemClassLibraryTests", "TicketSystemClassLibraryTests\TicketSystemClassLibraryTests.csproj", "{BB471A84-4360-4C7A-ABA5-8BCF88E939AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreBaeltTicketLibrary”", "StoreBaeltTicketLibrary”\StoreBaeltTicketLibrary”.csproj", "{F5F7866A-4943-4937-9045-798196E780B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BB471A84-4360-4C7A-ABA5-8BCF88E939AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB471A84-4360-4C7A-ABA5-8BCF88E939AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB471A84-4360-4C7A-ABA5-8BCF88E939AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5F7866A-4943-4937-9045-798196E780B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5F7866A-4943-4937-9045-798196E780B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5F7866A-4943-4937-9045-798196E780B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5F7866A-4943-4937-9045-798196E780B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

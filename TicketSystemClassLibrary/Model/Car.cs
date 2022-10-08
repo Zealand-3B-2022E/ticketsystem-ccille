@@ -20,16 +20,35 @@
         }
         
         /// <summary>
-        /// Method for Price - double inherit from vehicle class
+        /// Method for Price - double inherit from vehicle class with bool brobiz
         /// </summary>
         /// <returns>Price 240</returns>
         public override double Price(bool brobiz)
         {
+
             if (brobiz == true)
             {
                 return 240 * 0.95;
             }
+            
+            bool saturday = false;
+            bool sunday = false;
+
+            if (saturday == true || sunday == true || brobiz == true)
+            {
+                return 240 * 0.80 * 0.95;
+
+                
+            }
+
+            if (saturday == false || sunday == false)
+            {
+                return 240;
+            }
+
             return 240;
+
+            
         }
 
         /// <summary>

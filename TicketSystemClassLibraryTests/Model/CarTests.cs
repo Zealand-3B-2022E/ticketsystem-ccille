@@ -48,6 +48,33 @@ namespace TicketSystemClassLibrary.Model.Tests
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod()]
+        [DataRow(0.9)]
+        public void CarPrice_SchouldBe_With_Saturday_Or_Sunday_Discount_And_BroBizz(double delta)
+        {
+            //Arrange
+            double expected = 183;
+
+            //Act
+            double actual = ca.Price(true);
+
+            //Assert
+            Assert.AreEqual(expected, actual, delta);
+        }
+
+        [TestMethod()]
+        public void CarPrice_SchouldBe_Without_Saturday_Or_Sunday_Discount()
+        {
+            //Arrange
+            double expected = 240;
+
+            //Act
+            double actual = ca.Price(false);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
         /// <summary>
         /// Test for vechile car
         /// </summary>
@@ -63,7 +90,6 @@ namespace TicketSystemClassLibrary.Model.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
 
         [TestMethod()]
         [DataRow("")]
