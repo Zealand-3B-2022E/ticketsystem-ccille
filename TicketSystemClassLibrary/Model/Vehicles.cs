@@ -8,6 +8,7 @@ namespace TicketSystemClassLibrary.Model
 {
     public abstract class Vehicles
     {
+
         public string LicensPlate { get; set; }
 
         public DateTime Date { get; set; }
@@ -29,12 +30,12 @@ namespace TicketSystemClassLibrary.Model
 
         }
 
-        
+
         /// <summary>
         /// Abstract method for pice
         /// </summary>
         /// <returns>Price in double</returns>
-        public abstract  double Price(bool Brobiz);
+        public abstract double Price(bool Brobiz);
 
 
         /// <summary>

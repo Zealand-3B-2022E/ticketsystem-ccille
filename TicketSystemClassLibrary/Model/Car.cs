@@ -8,10 +8,9 @@
         /// Constructor with parameters
         /// </summary>
         /// <param name="licensPlate">car linsensplate</param>
-        /// <param name="date">Date</param>
-        public Car(string licensplate, DateTime date) :base()
+        public Car(string licensplate) :base()
         {
-            
+            LicensPlate = licensplate;
         }
 
         public Car() : base()
@@ -22,7 +21,7 @@
         /// <summary>
         /// Method for Price - double inherit from vehicle class with bool brobiz
         /// </summary>
-        /// <returns>Price 240</returns>
+        /// <returns>Price 240, broboz discount and weekend discount</returns>
         public override double Price(bool brobiz)
         {
 

@@ -9,12 +9,16 @@ namespace TicketSystemClassLibrary.Model
     public class MC : Vehicles
     {
        
-        /// <summary>
-        /// Default constructor
-        /// </summary>
-        public MC() :base()
+        public MC(string licensplate) :base()
         {
+            LicensPlate = licensplate;
         }
+
+        public MC()
+        {
+
+        }
+
 
         /// <summary>
         /// Method for price - double inherit from vehicle with bool for brobiz
