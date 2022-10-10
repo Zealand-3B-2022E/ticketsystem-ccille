@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketSystemClassLibraryTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreBaeltTicketLibrary”", "StoreBaeltTicketLibrary”\StoreBaeltTicketLibrary”.csproj", "{F5F7866A-4943-4937-9045-798196E780B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oresundbron", "Oresundbron\Oresundbron.csproj", "{F2FBDFB6-E3AD-4E2D-8309-F1220FCBE38A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oresundbron", "Oresundbron\Oresundbron.csproj", "{F2FBDFB6-E3AD-4E2D-8309-F1220FCBE38A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorebæltbroenAPI", "StorebæltbroenAPI\StorebæltbroenAPI.csproj", "{880E03DD-A8EF-46C8-A56A-B496385E40F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StorebæltbroenAPI", "StorebæltbroenAPI\StorebæltbroenAPI.csproj", "{880E03DD-A8EF-46C8-A56A-B496385E40F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

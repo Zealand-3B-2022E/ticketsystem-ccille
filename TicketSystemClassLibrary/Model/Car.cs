@@ -30,20 +30,20 @@
                 return 240 * 0.95;
             }
             
-            bool saturday = false;
-            bool sunday = false;
+            //bool saturday = false;
+            //bool sunday = false;
 
-            if (saturday == true || sunday == true || brobiz == true)
-            {
-                return 240 * 0.80 * 0.95;
+            //if (saturday == true || sunday == true || brobiz == true)
+            //{
+            //    return 240 * 0.80 * 0.95;
 
                 
-            }
+            //}
 
-            if (saturday == false || sunday == false)
-            {
-                return 240;
-            }
+            //if (saturday == false || sunday == false)
+            //{
+            //    return 240;
+            //}
 
             return 240;
 

@@ -20,7 +20,7 @@ namespace TicketSystemClassLibrary.Model.Tests
         }
 
         [TestMethod()]
-        public void MC_Price_Without_Discont()
+        public void MC_Price_Without_Brobiz_Discont()
         {
             //Arrange
             double expected = 125;
