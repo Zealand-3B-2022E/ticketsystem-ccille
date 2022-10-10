@@ -22,7 +22,8 @@ namespace StorebæltbroenAPI.Controllers
         }
 
         // GET api/<MCTicketsController>/5
-        [HttpGet("Licensplate")]
+        [HttpGet]
+        [Route("Licensplate")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetMCByLicensplate(string plate)
@@ -43,21 +44,53 @@ namespace StorebæltbroenAPI.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public MC Post([FromBody] MC mc)
+        public IActionResult Post([FromBody] MC mc)
         {
-            return mrg.CreateMCTicket(mc);
+            try
+            {
+                MC newmc = mrg.CreateMCTicket(mc);
+                string uri = "api/Tickets/" + mc.LicensPlate;
+                return Created(uri, newmc);
+            }
+            catch (ArgumentException ae)
+            {
+
+                return Conflict(ae.Message);
+            }
         }
 
         // PUT api/<MCTicketsController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
+        [HttpPut]
+        [Route("{licensplate}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult Put(string licensplate, [FromBody] MC mc)
+        {
+            try
+            {
+                return Ok(mrg.UpdateMC(licensplate, mc));
+            }
+            catch (KeyNotFoundException knfe)
+            {
+                return NotFound(knfe.Message);
+            }
+        }
 
         // DELETE api/<MCTicketsController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        [HttpDelete]
+        [Route("{licensplate}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult Delete(string licensplate)
+        {
+            try
+            {
+                return Ok(mrg.DeleteMC(licensplate));
+            }
+            catch (KeyNotFoundException knfe)
+            {
+                return NotFound(knfe.Message);
+            }
+        }
     }
 }

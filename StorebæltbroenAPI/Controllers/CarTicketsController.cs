@@ -22,33 +22,74 @@ namespace StorebæltbroenAPI.Controllers
         }
 
         // GET api/<TicketsController>/5
-        [HttpGet("Licensplate")]
+        [HttpGet]
+        [Route("licensplate")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public Car GetAllCarsByLicensplate(string plate)
+        public IActionResult GetAllCarsByLicensplate(string plate)
         {
-            return mrg.GetCarByLicensplate(plate);
+            try
+            {
+                Car car = mrg.GetCarByLicensplate(plate);
+                return Ok(car);
+            }
+            catch (KeyNotFoundException knfe)
+            {
+                return NotFound(knfe.Message);
+            }
         }
 
         // POST api/<TicketsController>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public Car Post([FromBody] Car c)
+        public IActionResult Post([FromBody] Car c)
         {
-            return mrg.CreateTicket(c);
+            try
+            {
+                Car newcar = mrg.CreateTicket(c);
+                string uri = "api/Tickets/" + c.LicensPlate;
+                return Created(uri, newcar);
+            }
+            catch (ArgumentException ae)
+            {
+
+                return Conflict(ae.Message);
+            }
         }
 
         // PUT api/<TicketsController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
+        [HttpPut]
+        [Route("{licensplate}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult Put(string licensplate, [FromBody] Car c)
+        {
+            try
+            {
+                return Ok(mrg.UpdateCar(licensplate, c));
+            }
+            catch (KeyNotFoundException knfe)
+            {
+                return NotFound(knfe.Message);
+            }
+        }
 
         // DELETE api/<TicketsController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        [HttpDelete]
+        [Route("{licensplate}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult Delete(string licensplate)
+        {
+            try
+            {
+                return Ok(mrg.DeleteCar(licensplate));
+            }
+            catch (KeyNotFoundException knfe)
+            {
+                return NotFound(knfe.Message);
+            }
+        }
     }
 }

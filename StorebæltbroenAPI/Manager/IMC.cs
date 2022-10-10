@@ -9,5 +9,9 @@ namespace StorebæltbroenAPI.Manager
         List<MC> GetAllMCTickets();
 
         MC GetMCByLicensplate(string licensplate);
+
+        MC DeleteMC(string licensplate);
+
+        MC UpdateMC(string licensplate, MC updatedmc);
     }
 }

@@ -22,6 +22,14 @@ namespace StorebæltbroenAPI.Manager
             return newmcticket;
         }
 
+        //Ekstra
+        public MC DeleteMC(string licensplate)
+        {
+            MC del = GetMCByLicensplate(licensplate);
+            _mc.Remove(del);
+            return del;
+        }
+
         public List<MC> GetAllMCTickets()
         {
             return _mc;
@@ -34,6 +42,18 @@ namespace StorebæltbroenAPI.Manager
                 throw new KeyNotFoundException();
             }
             return _mc.Find(mc => mc.LicensPlate == licensplate);
+        }
+
+        //Ekstra
+        public MC UpdateMC(string licensplate, MC updatedmc)
+        {
+            MC mc = GetMCByLicensplate(licensplate);
+            if (mc is not null)
+            {
+                mc.LicensPlate = updatedmc.LicensPlate;
+                mc.Date = updatedmc.Date;
+            }
+            return mc;
         }
     }
 }

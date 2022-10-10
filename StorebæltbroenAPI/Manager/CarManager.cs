@@ -23,6 +23,14 @@ namespace StorebæltbroenAPI.Manager
             return newcarticket;
         }
 
+        //Står ikke i opgaven
+        public Car DeleteCar(string licensplate)
+        {
+            Car del = GetCarByLicensplate(licensplate);
+            _cars.Remove(del);
+            return del;
+        }
+
         public List<Car> GetAllCarTickets()
         {
             return _cars; 
@@ -37,6 +45,16 @@ namespace StorebæltbroenAPI.Manager
             return _cars.Find(c => c.LicensPlate == licensplate);
         }
 
-
+        //Står ikke i opgaven
+        public Car UpdateCar(string licensplate, Car updatedcar)
+        {
+            Car ca = GetCarByLicensplate(licensplate);
+            if (ca is not null)
+            {
+                ca.LicensPlate = updatedcar.LicensPlate;
+                ca.Date = updatedcar.Date;
+            }
+            return ca;
+        }
     }
 }
