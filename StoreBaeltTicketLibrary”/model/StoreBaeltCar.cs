@@ -2,7 +2,7 @@
 
 namespace StoreBaeltTicketLibrary_
 {
-    public class StoreBaeltCar :Vehicles
+    public class StoreBaeltCar :Car
     {
         public override double Price(bool brobiz)
         {
@@ -23,9 +23,6 @@ namespace StoreBaeltTicketLibrary_
             return 240;
         }
 
-        public override string VehicleType()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
