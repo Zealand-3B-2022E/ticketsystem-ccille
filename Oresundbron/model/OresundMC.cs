@@ -11,7 +11,7 @@ namespace Oresundbron.model
     {
         public override double Price(bool brobiz)
         {
-            if (brobiz == true)
+            if (brobiz)
             {
                 return 73;
             }

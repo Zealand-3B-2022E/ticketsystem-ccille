@@ -26,7 +26,7 @@ namespace TicketSystemClassLibrary.Model
         /// <returns>the price for MC</returns>
         public override double Price(bool brobiz)
         {
-            if (brobiz == true)
+            if (brobiz)
             {
                 return 125 * 0.95;
             }

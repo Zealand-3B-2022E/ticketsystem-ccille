@@ -25,7 +25,7 @@
         public override double Price(bool brobiz)
         {
 
-            if (brobiz == true)
+            if (brobiz)
             {
                 return 240 * 0.95;
             }
