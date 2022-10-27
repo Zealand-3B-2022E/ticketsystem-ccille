@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TicketSystemClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="M:TicketSystemClassLibrary.Model.Car.#ctor(System.String)">
+            <summary>
+            Constructor with parameters
+            </summary>
+            <param name="licensPlate">car linsensplate</param>
+        </member>
+        <member name="M:TicketSystemClassLibrary.Model.Car.Price(System.Boolean)">
+            <summary>
+            Method for Price - double inherit from vehicle class with bool brobiz
+            </summary>
+            <returns>Price 240, broboz discount and weekend discount</returns>
+        </member>
+        <member name="M:TicketSystemClassLibrary.Model.Car.VehicleType">
+            <summary>
+            Method for vehicles - string inherit from vehicle class
+            </summary>
+            <returns>String "car"</returns>
+        </member>
+        <member name="M:TicketSystemClassLibrary.Model.MC.Price(System.Boolean)">
+            <summary>
+            Method for price - double inherit from vehicle with bool for brobiz
+            </summary>
+            <returns>the price for MC</returns>
+        </member>
+        <member name="M:TicketSystemClassLibrary.Model.MC.VehicleType">
+            <summary>
+            Method for type of vehicle - string inherit from vehicle
+            </summary>
+            <returns>type of vehicle MC</returns>
+        </member>
+        <member name="M:TicketSystemClassLibrary.Model.Vehicles.Price(System.Boolean)">
+            <summary>
+            Abstract method for pice
+            </summary>
+            <returns>Price in double</returns>
+        </member>
+        <member name="M:TicketSystemClassLibrary.Model.Vehicles.VehicleType">
+            <summary>
+            Abstract method for type of vehicle
+            </summary>
+            <returns>Type of vehicle - string</returns>
+        </member>
+    </members>
+</doc>
