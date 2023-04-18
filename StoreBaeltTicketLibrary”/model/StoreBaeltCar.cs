@@ -8,19 +8,17 @@ namespace StoreBaeltTicketLibrary_
         {
             bool saturday = false;
             bool sunday = false;
+            double price = 240;
 
             if (saturday == true || sunday == true || brobiz)
             {
-                return 240 * 0.80 * 0.95;
+                price = price * 0.80 * 0.95;
 
             }
 
-            if (saturday == false || sunday == false)
-            {
-                return 240;
-            }
+            
 
-            return 240;
+            return price;
         }
 
 
